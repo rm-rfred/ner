@@ -10,6 +10,13 @@ router = APIRouter()
 en_core_web_lg = spacy.load("en_core_web_lg")
 
 
+@router.get("/", status_code=200)
+def hello_world():
+    return {
+        "message": "Hello World"
+    }
+
+
 @router.post("/extraction", status_code=200, response_model=Output)
 def extractions(input: Input):
     document = en_core_web_lg(input.sentence)
