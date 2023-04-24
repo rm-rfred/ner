@@ -17,11 +17,11 @@ services:
     restart: always
     build: 
       context: backend
-      dockerfile: Dockerfile
+      dockerfile: prod.Dockerfile
     container_name: backend
     environment:
       API_VERSION: 1.0.0
-      API_ENV: "DEV" # or PROD
+      API_ENV: "PROD"
       PYTHONPATH: .
     volumes:
       - ./backend/app:/app
