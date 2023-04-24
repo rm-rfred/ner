@@ -35,7 +35,6 @@ async def redoc_html():
     return get_redoc_html(
         openapi_url=app.openapi_url,
         title=app.title + " - Redoc",
-        # redoc_js_url="/api/static/redoc.standalone.js",
         redoc_favicon_url="#",
     )
 
