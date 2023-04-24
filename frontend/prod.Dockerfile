@@ -8,7 +8,7 @@ COPY ./app/package.json /app/package.json
 COPY ./app/tsconfig.json /app/tsconfig.json
 
 RUN npm install --legacy-peer-deps
-RUN npm install --verbose -g serve@11.3.1
+RUN npm install --verbose -g serve@14.2.0
 
 ARG CHOKIDAR_USEPOLLING
 ARG NODE_ENV
