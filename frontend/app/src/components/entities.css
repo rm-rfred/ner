@@ -1,0 +1,29 @@
+.entity-label-PERSON {
+    text-decoration: underline;
+    text-decoration-color: blue;
+  }
+  
+  .entity-label-LOC {
+    text-decoration: underline;
+    text-decoration-color: green;
+  }
+  
+  .entity-label-ORG {
+    text-decoration: underline;
+    text-decoration-color: red;
+  }
+
+  .entity-label-GPE {
+    text-decoration: underline;
+    text-decoration-color: purple;
+  }
+
+  .entity-label-DATE {
+    text-decoration: underline;
+    text-decoration-color: orange;
+  }
+  
+  .entity-paper {
+    padding: 10px;
+    margin-top: 20px;
+  }
