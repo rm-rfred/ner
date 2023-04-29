@@ -25,8 +25,10 @@ export const TextNer: React.FC<Props> = ({ text, entities }) => {
       const labelClass = `entity-label-${label}`;
       return (
         <React.Fragment key={index}>
-          <span>{beforeText}</span>
-          <span className={labelClass}>{entityTextContent}</span>
+          <Box component="span">{beforeText}</Box>
+          <Box component="span" className={labelClass}>
+            {entityTextContent}
+          </Box>
         </React.Fragment>
       );
     });
@@ -35,11 +37,18 @@ export const TextNer: React.FC<Props> = ({ text, entities }) => {
       <Paper
         variant="outlined"
         className="entity-paper"
-        sx={{ minWidth: "50vh", minHeight: "40vh" }}
+        sx={{ minWidth: "50vh", minHeight: "40vh", position: "relative" }}
       >
-        {[...entitySpans, <span key="last">{lastText}</span>]}
+        {[
+          ...entitySpans,
+          <Box component="span" key="last">
+            {lastText}
+          </Box>,
+        ]}
 
-        <HorizontalLegend entities={entities} />
+        <Box position="absolute" bottom={0} right={0}>
+          <HorizontalLegend entities={entities} />
+        </Box>
       </Paper>
     );
   };

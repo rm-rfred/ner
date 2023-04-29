@@ -1,3 +1,4 @@
+import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
 
 interface Entity {
@@ -34,35 +35,31 @@ const ENTITY_COLORS: { [key: string]: string } = {
 
 const HorizontalLegend: React.FC<Props> = ({ entities }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        marginBottom: "10px",
-      }}
-    >
-      {entities.map((entity, index) => (
-        <div
-          key={index}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginRight: "10px",
-          }}
-        >
-          <div
-            style={{
-              backgroundColor:
-                ENTITY_COLORS[entity.label as keyof typeof ENTITY_COLORS],
-              height: "15px",
-              width: "15px",
-              marginRight: "5px",
-            }}
-          />
-          <div>{entity.label}</div>
-        </div>
+    <>
+      {entities.map((entity) => (
+        <Grid container>
+          <Grid item>
+            <Stack
+              direction="row"
+              spacing={0}
+              alignItems="center"
+              justifyContent="flex-end"
+            >
+              <Box
+                style={{
+                  backgroundColor:
+                    ENTITY_COLORS[entity.label as keyof typeof ENTITY_COLORS],
+                  height: "15px",
+                  width: "15px",
+                  marginRight: "5px",
+                }}
+              />
+              <Box>{entity.label}</Box>
+            </Stack>
+          </Grid>
+        </Grid>
       ))}
-    </div>
+    </>
   );
 };
 
