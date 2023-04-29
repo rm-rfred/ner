@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Controller, useForm, SubmitHandler } from "react-hook-form";
-import { Button, Stack, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField } from "@mui/material";
+import { Cookies } from "react-cookie";
 
 import { apiFetch } from "../utils/Fetch";
 import "./entities.css";
@@ -31,6 +32,8 @@ export const TextForm: React.FC<Props> = ({
   setEntities,
 }) => {
   const { handleSubmit, control } = useForm<FormValues>();
+  const cookies = new Cookies();
+  const themeMode = cookies.get("theme");
 
   const onSubmit: SubmitHandler<FormValues> = (text) =>
     apiFetch(
@@ -44,52 +47,56 @@ export const TextForm: React.FC<Props> = ({
     });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={1}>
-        <Controller
-          name={"text"}
-          control={control}
-          defaultValue={""}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              multiline
-              sx={{
-                height: "100%",
-                width: "100%",
-                minWidth: "50vh",
-                minHeight: "40vh",
-                "& .MuiFormLabel-asterisk": {
-                  color: "red",
-                },
-                "& .MuiFormLabel-root": {
-                  color: "#fff",
-                },
-                "& .MuiInputBase-root": {
-                  color: "#fff",
-                },
-                "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                  {
-                    borderWidth: "2px",
-                    borderColor: "rgba(63, 81, 181, 0.5)",
-                    minWidth: "50vh",
-                    minHeight: "40vh",
+    <Box sx={{ minWidth: "50vh", minHeight: "40vh" }}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Stack spacing={1}>
+          <Controller
+            name={"text"}
+            control={control}
+            defaultValue={""}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                multiline
+                rows={18}
+                sx={{
+                  height: "100%",
+                  width: "60vh",
+                  minHeight: "40vh",
+                  borderWidth: "2px",
+                  borderColor: "rgba(63, 81, 181, 0.5)",
+                  "& .MuiFormLabel-root": {
+                    color: themeMode === "dark" ? "black" : "#fff",
                   },
-                backgroundColor: "rgba(0,0,0,0.35)",
-                color: "rgba(255,255,255,1)",
-                borderRadius: "5px",
-              }}
-              variant="outlined"
-              label={"Texte"}
-            />
-          )}
-        />
-
+                  "& .MuiInputBase-root": {
+                    color: themeMode === "dark" ? "black" : "#fff",
+                    width: "100%",
+                    minHeight: "40vh",
+                    backgroundColor:
+                      themeMode === "dark" ? "#CAD1D5" : "#69696A",
+                  },
+                  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+                    {
+                      borderWidth: "2px",
+                      borderColor: "rgba(63, 81, 181, 0.5)",
+                      width: "100%",
+                      minHeight: "40vh",
+                    },
+                }}
+                variant="outlined"
+                label={"Enter a text to detect entities"}
+                InputLabelProps={{
+                  style: { color: "secondary" },
+                }}
+              />
+            )}
+          />
+        </Stack>
         <Button type="submit" variant="contained" color="primary">
-          Submit
+          DETECT ENTITIES
         </Button>
-      </Stack>
-    </form>
+      </form>
+    </Box>
   );
 };
 

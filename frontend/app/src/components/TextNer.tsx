@@ -1,5 +1,8 @@
-import { Box, Paper } from "@mui/material";
 import React from "react";
+
+import { Box, Paper } from "@mui/material";
+import { Cookies } from "react-cookie";
+
 import HorizontalLegend from "./HorizontalLegend";
 
 type Entity = {
@@ -15,6 +18,9 @@ interface Props {
 }
 
 export const TextNer: React.FC<Props> = ({ text, entities }) => {
+  const cookies = new Cookies();
+  const themeMode = cookies.get("theme");
+
   const renderEntities = () => {
     let lastIndex = 0;
     const entitySpans = entities.map((entity, index) => {
@@ -37,7 +43,12 @@ export const TextNer: React.FC<Props> = ({ text, entities }) => {
       <Paper
         variant="outlined"
         className="entity-paper"
-        sx={{ minWidth: "50vh", minHeight: "40vh", position: "relative" }}
+        sx={{
+          width: "60vh",
+          minHeight: "40vh",
+          position: "relative",
+          backgroundColor: themeMode === "dark" ? "#CAD1D5" : "#69696A",
+        }}
       >
         {[
           ...entitySpans,

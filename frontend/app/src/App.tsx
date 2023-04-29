@@ -35,16 +35,16 @@ function App() {
   const theme = createTheme({
     palette: {
       mode: themeMode,
-      secondary: {
-        main: "#5a68e5",
-        light: "#9196ff",
-        dark: "#0d3eb2",
-        contrastText: "#000000",
-      },
       primary: {
         main: "#d0d0d0",
         light: "#ac6000",
         dark: "#ffbe4c",
+        contrastText: "#000000",
+      },
+      secondary: {
+        main: "#5a68e5",
+        light: "#9196ff",
+        dark: "#0d3eb2",
         contrastText: "#000000",
       },
     },
@@ -89,7 +89,7 @@ function App() {
             style={{ height: "100vh" }}
           >
             <Grid item>
-              <Stack direction="row" spacing={10}>
+              <Stack spacing={2}>
                 <TextForm
                   text={text}
                   setText={setText}
