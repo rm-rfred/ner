@@ -1,5 +1,6 @@
 import { Box, Paper } from "@mui/material";
 import React from "react";
+import HorizontalLegend from "./HorizontalLegend";
 
 type Entity = {
   text: string;
@@ -37,6 +38,8 @@ export const TextNer: React.FC<Props> = ({ text, entities }) => {
         sx={{ minWidth: "50vh", minHeight: "40vh" }}
       >
         {[...entitySpans, <span key="last">{lastText}</span>]}
+
+        <HorizontalLegend entities={entities} />
       </Paper>
     );
   };
