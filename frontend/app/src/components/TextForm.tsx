@@ -64,7 +64,6 @@ export const TextForm: React.FC<Props> = ({
                   width: "60vh",
                   minHeight: "40vh",
                   borderWidth: "2px",
-                  borderColor: "rgba(63, 81, 181, 0.5)",
                   "& .MuiFormLabel-root": {
                     color: themeMode === "dark" ? "black" : "#fff",
                   },
