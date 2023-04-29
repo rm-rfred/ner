@@ -1,29 +1,94 @@
+.entity-label-CARDINAL {
+  text-decoration: underline;
+  text-decoration-color: rgb(235, 103, 123);
+}
+
+.entity-label-DATE {
+  text-decoration: underline;
+  text-decoration-color: orange;
+}
+
+.entity-label-EVENT {
+  text-decoration: underline;
+  text-decoration-color: yellowgreen;
+}
+
+.entity-label-FAC {
+  text-decoration: underline;
+  text-decoration-color: rosybrown;
+}
+
+.entity-label-GPE {
+  text-decoration: underline;
+  text-decoration-color: purple;
+}
+
+.entity-label-LANGUAGE {
+  text-decoration: underline;
+  text-decoration-color: rgb(160, 95, 16);
+}
+
+.entity-label-LAW {
+  text-decoration: underline;
+  text-decoration-color: rgb(246, 201, 246);
+}
+  
+.entity-label-LOC {
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+
+.entity-label-MONEY {
+  text-decoration: underline;
+  text-decoration-color: rgb(184, 99, 99);
+}
+
+.entity-label-NORP {
+  text-decoration: underline;
+  text-decoration-color: rgb(101, 190, 198);
+}
+
+.entity-label-ORDINAL {
+  text-decoration: underline;
+  text-decoration-color: rgb(156, 206, 168);
+}
+  
+.entity-label-ORG {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.entity-label-PERCENT {
+  text-decoration: underline;
+  text-decoration-color: rgb(85, 107, 158);
+}
+
 .entity-label-PERSON {
-    text-decoration: underline;
-    text-decoration-color: blue;
-  }
-  
-  .entity-label-LOC {
-    text-decoration: underline;
-    text-decoration-color: green;
-  }
-  
-  .entity-label-ORG {
-    text-decoration: underline;
-    text-decoration-color: red;
-  }
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
 
-  .entity-label-GPE {
-    text-decoration: underline;
-    text-decoration-color: purple;
-  }
+.entity-label-PRODUCT {
+  text-decoration: underline;
+  text-decoration-color: rgb(192, 55, 66);
+}
 
-  .entity-label-DATE {
-    text-decoration: underline;
-    text-decoration-color: orange;
-  }
+.entity-label-QUANTITY {
+  text-decoration: underline;
+  text-decoration-color: rgb(84, 44, 19);
+}
   
-  .entity-paper {
-    padding: 10px;
-    margin-top: 20px;
-  }
+.entity-label-TIME {
+  text-decoration: underline;
+  text-decoration-color: rgb(119, 255, 0);
+}
+
+.entity-label-WORK_OF_ART {
+  text-decoration: underline;
+  text-decoration-color: rgb(15, 88, 88);
+}
+
+.entity-paper {
+  padding: 10px;
+  margin-top: 20px;
+}
