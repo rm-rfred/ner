@@ -36,8 +36,8 @@ const ENTITY_COLORS: { [key: string]: string } = {
 const HorizontalLegend: React.FC<Props> = ({ entities }) => {
   return (
     <>
-      {entities.map((entity) => (
-        <Grid container>
+      {entities.map((entity, index) => (
+        <Grid container key={index}>
           <Grid item>
             <Stack
               direction="row"
