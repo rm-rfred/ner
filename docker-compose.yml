@@ -13,7 +13,7 @@ services:
           - backend
 
   backend:
-    image: ner/backend:devel
+    image: rm-rfred/ner-backend:devel
     restart: always
     build: 
       context: backend
@@ -28,10 +28,10 @@ services:
 
   frontend:
     restart: on-failure
-    image: ner/frontend:devel
+    image: rm-rfred/ner-frontend:devel
     stdin_open: true
     build: ./frontend
-    container_name: frontend
+    container_namex: frontend
     environment:
       NODE_ENV: development
       CHOKIDAR_USEPOLLING: "true"
